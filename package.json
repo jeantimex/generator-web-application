@@ -1,22 +1,74 @@
 {
   "name": "generator-web-application",
   "version": "1.0.1",
-  "description": "Scaffold your next HTML5 app with webpack and webpack dev server",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "Scaffold your next HTML5 app with webpack and webpack dev server.",
+  "homepage": "https://github.com/jeantimex/generator-web-application",
+  "author": {
+    "name": "jeantimex",
+    "email": "jean.timex@gmail.com",
+    "url": "https://github.com/jeantimex"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jeantimex/generator-web-application.git"
-  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
   "keywords": [
     "yeoman-generator"
   ],
-  "author": "jeantimex",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jeantimex/generator-web-application/issues"
+  "devDependencies": {
+    "yeoman-test": "^2.0.0",
+    "yeoman-assert": "^3.1.1",
+    "coveralls": "^3.0.6",
+    "eslint": "^6.4.0",
+    "prettier": "^1.18.2",
+    "husky": "^3.0.6",
+    "lint-staged": "^9.4.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-config-xo": "^0.27.1",
+    "jest": "^24.9.0"
   },
-  "homepage": "https://github.com/jeantimex/generator-web-application#readme"
+  "engines": {
+    "npm": ">= 6.0.0"
+  },
+  "dependencies": {
+    "yeoman-generator": "^4.1.0",
+    "chalk": "^2.4.2",
+    "yosay": "^2.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "xo",
+      "prettier"
+    ],
+    "env": {
+      "jest": true,
+      "node": true
+    },
+    "rules": {
+      "prettier/prettier": "error"
+    },
+    "plugins": [
+      "prettier"
+    ]
+  },
+  "scripts": {
+    "pretest": "eslint .",
+    "test": "jest"
+  },
+  "repository": "jeantimex/generator-web-application",
+  "license": "MIT"
 }
