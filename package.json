@@ -1,6 +1,6 @@
 {
   "name": "generator-web-application",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Scaffold your next HTML5 app with webpack and webpack dev server",
   "main": "index.js",
   "scripts": {
