@@ -1,0 +1,22 @@
+{
+  "name": "generator-web-application",
+  "version": "1.0.0",
+  "description": "Scaffold your next HTML5 app with webpack and webpack dev server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeantimex/generator-web-application.git"
+  },
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "author": "jeantimex",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jeantimex/generator-web-application/issues"
+  },
+  "homepage": "https://github.com/jeantimex/generator-web-application#readme"
+}
