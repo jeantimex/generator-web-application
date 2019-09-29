@@ -71,6 +71,16 @@ module.exports = class extends Generator {
         version: this.props.version,
       }
     );
+
+    // Copy package-lock.json
+    this.fs.copyTpl(
+      this.templatePath('common/package-lock.json'),
+      this.destinationPath('package-lock.json'),
+      {
+        name: name,
+        version: this.props.version,
+      }
+    );
   }
 
   install() {
