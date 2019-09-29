@@ -37,7 +37,7 @@ module.exports = class extends Generator {
         type: 'input',
         name: 'author',
         message: 'Author',
-        default: 'Your name',
+        default: '',
       },
     ];
 
@@ -55,14 +55,14 @@ module.exports = class extends Generator {
       .join('-');
 
     // Copy all non-dotfiles in common
-    this.fs.copy(this.templatePath('common/**/*'), this.destinationRoot());
+    this.fs.copy(this.templatePath('**/*'), this.destinationRoot());
 
     // Copy all dotfiles in common
-    this.fs.copy(this.templatePath('common/.*'), this.destinationRoot());
+    this.fs.copy(this.templatePath('.*'), this.destinationRoot());
 
     // Copy package.json
     this.fs.copyTpl(
-      this.templatePath('common/package.json'),
+      this.templatePath('package.json'),
       this.destinationPath('package.json'),
       {
         name: name,
@@ -74,7 +74,7 @@ module.exports = class extends Generator {
 
     // Copy package-lock.json
     this.fs.copyTpl(
-      this.templatePath('common/package-lock.json'),
+      this.templatePath('package-lock.json'),
       this.destinationPath('package-lock.json'),
       {
         name: name,
