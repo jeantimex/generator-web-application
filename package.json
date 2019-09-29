@@ -37,7 +37,8 @@
     "yosay": "^2.0.2"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "testRegex": "__tests__/.*\\.js$"
   },
   "lint-staged": {
     "*.js": [

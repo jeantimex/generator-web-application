@@ -15,10 +15,11 @@ describe('generator-web-application:app', () => {
 
   it('creates files', () => {
     assert.file([
-      '.babelrc',
       '.eslintrc.json',
       '.gitignore',
       '.prettierrc',
+      'babel.config.js',
+      'jest.config.js',
       'package-lock.json',
       'package.json',
       'records.json',
@@ -28,6 +29,8 @@ describe('generator-web-application:app', () => {
       'src/index.js',
       'src/main.scss',
       'src/pages/about.js',
+      'src/lib/math.js',
+      'tests/math.test.js',
     ]);
   });
 });
