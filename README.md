@@ -57,8 +57,8 @@ MIT © [jeantimex](https://github.com/jeantimex)
 
 [npm-image]: https://badge.fury.io/js/generator-web-application.svg
 [npm-url]: https://npmjs.org/package/generator-web-application
-[travis-image]: https://travis-ci.com/jeantimex/generator-web-application.svg?branch=master
-[travis-url]: https://travis-ci.com/jeantimex/generator-web-application
+[travis-image]: https://travis-ci.org/jeantimex/generator-web-application.svg?branch=master
+[travis-url]: https://travis-ci.org/jeantimex/generator-web-application
 [daviddm-image]: https://david-dm.org/jeantimex/generator-web-application.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/jeantimex/generator-web-application
 [coveralls-image]: https://coveralls.io/repos/jeantimex/generator-web-application/badge.svg
