@@ -13,6 +13,11 @@ const commonConfig = merge([
       // Needed for code splitting to work in nested paths
       publicPath: '/',
     },
+    resolve: {
+      alias: {
+        lib: path.resolve(__dirname, 'src/lib/'),
+      },
+    },
   },
   parts.loadJavaScript({ include: PATHS.app }),
 ]);
@@ -59,9 +64,6 @@ const productionConfig = merge([
   parts.generateSourceMaps({ type: 'source-map' }),
   {
     optimization: {
-      splitChunks: {
-        chunks: 'initial',
-      },
       runtimeChunk: {
         name: 'manifest',
       },
