@@ -15,7 +15,7 @@ Then generate your new project:
 
 ```bash
 $ mkdir my-app && cd $_
-$ yo html-app
+$ yo web-application
 ```
 
 Start the dev server:
@@ -34,6 +34,12 @@ Generate production bundle:
 
 ```bash
 $ npm run build
+```
+
+Run tests:
+
+```bash
+$ npm run test
 ```
 
 ## Getting To Know Yeoman
