@@ -97,7 +97,7 @@ exports.loadJavaScript = ({ include, exclude } = {}) => ({
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: [/\.jsx?$/, /\.tsx?$/],
         include,
         exclude,
         use: 'babel-loader',

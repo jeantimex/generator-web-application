@@ -20,7 +20,7 @@
         "byName": {},
         "bySource": {},
         "usedIds": [
-          0
+          1
         ]
       }
     }
@@ -80,7 +80,8 @@
       "node_modules/babel-loader/lib/index.js!src/page.js": 2,
       "node_modules/babel-loader/lib/index.js!src/pages/about.js": 2,
       "node_modules/mini-css-extract-plugin/dist/loader.js!node_modules/css-loader/dist/cjs.js!node_modules/sass-loader/dist/cjs.js!node_modules/postcss-loader/src/index.js??ref--5-3!src/main.scss": 1,
-      "node_modules/babel-loader/lib/index.js!src/index.js 7b5eaa85793d5ed6a2bbf43765e025be": 0
+      "node_modules/babel-loader/lib/index.js!src/index.js 7b5eaa85793d5ed6a2bbf43765e025be": 0,
+      "node_modules/babel-loader/lib/index.js!src/index.js f99451c2ea11b314e5963211dcabdfae": 0
     },
     "usedIds": {
       "0": 0,
@@ -173,7 +174,7 @@
         "byName": {},
         "bySource": {},
         "usedIds": [
-          1
+          0
         ]
       }
     }

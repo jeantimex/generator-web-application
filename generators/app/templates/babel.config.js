@@ -3,7 +3,7 @@ module.exports = api => {
 
   if (isTest) {
     return {
-      presets: ['@babel/preset-env'],
+      presets: ['@babel/preset-env', '@babel/preset-typescript'],
     };
   }
 
@@ -18,6 +18,7 @@ module.exports = api => {
           corejs: 3,
         },
       ],
+      '@babel/preset-typescript',
     ],
   };
 };
