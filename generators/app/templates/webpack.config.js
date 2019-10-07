@@ -17,6 +17,7 @@ const commonConfig = merge([
       alias: {
         lib: path.resolve(__dirname, 'src/lib/'),
       },
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
     },
   },
   parts.loadJavaScript({ include: PATHS.app }),
