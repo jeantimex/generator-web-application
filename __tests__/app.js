@@ -23,13 +23,14 @@ describe('generator-web-application:app', () => {
       'package-lock.json',
       'package.json',
       'records.json',
+      'tsconfig.json',
       'webpack.config.js',
       'webpack.parts.js',
       'src/index.html',
       'src/index.js',
       'src/main.scss',
       'src/pages/about.js',
-      'src/lib/math.js',
+      'src/lib/math.ts',
       'tests/math.test.js',
     ]);
   });
