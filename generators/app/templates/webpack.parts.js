@@ -1,3 +1,4 @@
+/* eslint-disable */
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -23,7 +24,7 @@ exports.page = ({
     plugins: [
       new HtmlWebpackPlugin({
         chunks,
-        filename: path + name + '.html',
+        filename: `${path + name}.html`,
         template,
         title,
       }),
@@ -31,7 +32,7 @@ exports.page = ({
   };
 };
 
-exports.clean = path => ({
+exports.clean = (path) => ({
   plugins: [new CleanWebpackPlugin()],
 });
 

@@ -1,4 +1,5 @@
-module.exports = api => {
+/* eslint-disable */
+module.exports = (api) => {
   const isTest = api.env('test');
 
   if (isTest) {

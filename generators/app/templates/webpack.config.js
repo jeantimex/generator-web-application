@@ -1,7 +1,8 @@
+/* eslint-disable */
 const path = require('path');
 const merge = require('webpack-merge');
-const parts = require('./webpack.parts');
 const glob = require('glob');
+const parts = require('./webpack.parts');
 
 const PATHS = {
   app: path.join(__dirname, 'src'),
@@ -17,7 +18,7 @@ const commonConfig = merge([
       alias: {
         lib: path.resolve(__dirname, 'src/lib/'),
       },
-      extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      extensions: ['.js', '.ts'],
     },
   },
   parts.loadJavaScript({ include: PATHS.app }),
@@ -54,7 +55,7 @@ const productionConfig = merge([
     use: ['css-loader', 'sass-loader', parts.autoprefix()],
   }),
   parts.purifyCSS({
-    paths: glob.sync(PATHS.app + '/**/*.js', { nodir: true }),
+    paths: glob.sync(`${PATHS.app}/**/*.{js,ts}`, { nodir: true }),
   }),
   parts.loadImages({
     options: {
@@ -62,7 +63,6 @@ const productionConfig = merge([
       name: '[name].[hash:4].[ext]',
     },
   }),
-  parts.generateSourceMaps({ type: 'source-map' }),
   {
     optimization: {
       runtimeChunk: {
@@ -79,9 +79,10 @@ const developmentConfig = merge([
     port: process.env.PORT,
   }),
   parts.loadCSS(),
+  parts.generateSourceMaps({ type: 'source-map' }),
 ]);
 
-module.exports = mode => {
+module.exports = (mode) => {
   const pages = [
     // index page
     parts.page({
@@ -98,7 +99,7 @@ module.exports = mode => {
       title: 'About',
       path: 'pages',
       entry: {
-        about: path.join(PATHS.app, 'pages', 'about.js'),
+        about: path.join(PATHS.app, 'pages', 'about.ts'),
       },
       chunks: ['manifest', 'about', 'vendors~app'],
     }),

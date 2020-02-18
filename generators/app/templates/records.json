@@ -81,7 +81,10 @@
       "node_modules/babel-loader/lib/index.js!src/pages/about.js": 2,
       "node_modules/mini-css-extract-plugin/dist/loader.js!node_modules/css-loader/dist/cjs.js!node_modules/sass-loader/dist/cjs.js!node_modules/postcss-loader/src/index.js??ref--5-3!src/main.scss": 1,
       "node_modules/babel-loader/lib/index.js!src/index.js 7b5eaa85793d5ed6a2bbf43765e025be": 0,
-      "node_modules/babel-loader/lib/index.js!src/index.js f99451c2ea11b314e5963211dcabdfae": 0
+      "node_modules/babel-loader/lib/index.js!src/index.js f99451c2ea11b314e5963211dcabdfae": 0,
+      "node_modules/babel-loader/lib/index.js!src/pages/about.ts": 0,
+      "node_modules/babel-loader/lib/index.js!src/index.ts a4a538853117fb9b8b8aecdb7d101326": 2,
+      "node_modules/babel-loader/lib/index.js!src/index.js 5677e5b424ff8e2cfd0f755278fe4cf7": 0
     },
     "usedIds": {
       "0": 0,
