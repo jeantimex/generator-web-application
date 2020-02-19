@@ -15,7 +15,7 @@ describe('generator-web-application:app', () => {
 
   it('creates files', () => {
     assert.file([
-      '.eslintrc.json',
+      '.eslintrc.js',
       '.gitignore',
       '.prettierrc',
       'babel.config.js',
@@ -27,11 +27,11 @@ describe('generator-web-application:app', () => {
       'webpack.config.js',
       'webpack.parts.js',
       'src/index.html',
-      'src/index.js',
+      'src/index.ts',
       'src/main.scss',
-      'src/pages/about.js',
+      'src/pages/about.ts',
       'src/lib/math.ts',
-      'tests/math.test.js',
+      'src/lib/math.test.ts',
     ]);
   });
 });
