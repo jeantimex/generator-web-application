@@ -2,7 +2,17 @@
 
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 
-> Scaffold your next HTML5 app with webpack and webpack dev server.
+## About
+
+This Yeoman generator helps you scaffold your next HTML5 application.
+
+### Features
+
+- Bundle with Webpack
+- Develop with Webpack Dev Server
+- Easy sub page generating and splitting
+- Support TypeScript
+- Test with Jest
 
 ## Installation
 
@@ -13,11 +23,19 @@ $ npm install -g yo
 $ npm install -g generator-web-application
 ```
 
-Then generate your new project:
+## How to Use
+
+Generate your new project:
 
 ```bash
 $ mkdir my-app && cd $_
 $ yo web-application
+```
+
+Create a new page:
+
+```bash
+$ yo web-application:page "{YOUR PAGE NAME}"
 ```
 
 Start the dev server:
@@ -25,6 +43,8 @@ Start the dev server:
 ```bash
 $ npm run start
 ```
+
+the index page will be launched automatically at `http://localhost:8080/`, to see sub pages, go to `http://localhost:8080/pages/{your-page-name}.html`.
 
 Generate development bundle:
 
@@ -36,6 +56,12 @@ Generate production bundle:
 
 ```bash
 $ npm run build
+```
+
+Run ESLint:
+
+```bash
+$ npm run lint
 ```
 
 Run tests:
@@ -55,7 +81,7 @@ $ npm run test
 
 The MIT License (MIT)
 
-Copyright (c) 2019 jeantimex <jean.timex@gmail.com> (https://github.com/jeantimex)
+Copyright (c) 2019 jeantimex
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -74,8 +100,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
-![logo](logo.jpg)
 
 [npm-image]: https://badge.fury.io/js/generator-web-application.svg
 [npm-url]: https://npmjs.org/package/generator-web-application
