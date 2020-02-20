@@ -1,4 +1,5 @@
 /* eslint-disable */
+const fs = require('fs');
 const path = require('path');
 const merge = require('webpack-merge');
 const glob = require('glob');
@@ -16,7 +17,7 @@ const commonConfig = merge([
     },
     resolve: {
       alias: {
-        lib: path.resolve(__dirname, 'src/lib/'),
+        components: path.resolve(__dirname, 'src/components/'),
       },
       extensions: ['.js', '.ts'],
     },
@@ -82,28 +83,54 @@ const developmentConfig = merge([
   parts.generateSourceMaps({ type: 'source-map' }),
 ]);
 
-module.exports = (mode) => {
-  const pages = [
-    // index page
-    parts.page({
-      title: 'App',
-      entry: {
-        app: PATHS.app,
-      },
-      chunks: ['manifest', 'app', 'vendors~app'],
-      template: './src/index.html',
-    }),
-    // about page
-    parts.page({
-      name: 'about',
-      title: 'About',
-      path: 'pages',
-      entry: {
-        about: path.join(PATHS.app, 'pages', 'about.ts'),
-      },
-      chunks: ['manifest', 'about', 'vendors~app'],
-    }),
-  ];
+module.exports = mode => {
+  const pages = [];
+
+  // Index page.
+  const indexPage = {
+    title: 'App',
+    entry: {
+      app: PATHS.app,
+    },
+    chunks: ['manifest', 'app', 'vendors~app'],
+  };
+
+  const indexPageTemplate = path.resolve(__dirname, 'src/index.html');
+  if (fs.existsSync(indexPageTemplate)) {
+    indexPage.template = indexPageTemplate;
+  }
+
+  pages.push(parts.page(indexPage));
+
+  // Other pages.
+  const pagesDirectory = path.join(__dirname, 'src/pages');
+  fs.readdirSync(pagesDirectory)
+    .filter(filename => filename.match(/\.(js|ts)$/))
+    .forEach(filename => {
+      const pageName = path.parse(filename).name;
+      const pageTitle = pageName.replace(/^\w/, c => c.toUpperCase());
+      const pagePath = 'pages';
+
+      // Create the page chunk.
+      const page = {
+        name: pageName,
+        title: pageTitle,
+        path: pagePath,
+        entry: {
+          [pageName]: path.join(PATHS.app, pagePath, filename),
+        },
+        chunks: ['manifest', pageName, 'vendors~app'],
+      };
+
+      // Use page html template if it exists.
+      const pageTemplate = path.resolve(pagesDirectory, pageName + '.html');
+      if (fs.existsSync(pageTemplate)) {
+        page.template = pageTemplate;
+      }
+
+      pages.push(parts.page(page));
+    });
+
   const config = mode === 'production' ? productionConfig : developmentConfig;
 
   return merge([commonConfig, config, { mode }].concat(pages));
