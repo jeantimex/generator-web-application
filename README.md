@@ -4,7 +4,7 @@
 
 ## About
 
-This Yeoman generator helps you scaffold your next HTML5 application.
+This Yeoman generator helps you scaffold your next web application.
 
 ### Features
 
