@@ -70,7 +70,7 @@
   "scripts": {
     "pretest": "eslint .",
     "test": "jest",
-    "release": "release-it"
+    "release": "npm run test && release-it"
   },
   "repository": "jeantimex/generator-web-application",
   "license": "MIT"
