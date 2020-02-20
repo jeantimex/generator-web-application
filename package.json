@@ -1,6 +1,6 @@
 {
   "name": "generator-web-application",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "description": "Scaffold your next HTML5 app with webpack and webpack dev server.",
   "homepage": "https://github.com/jeantimex/generator-web-application",
   "author": {
