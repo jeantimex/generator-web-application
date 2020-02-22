@@ -15,10 +15,12 @@ module.exports = {
     },
   },
   rules: {
+    'max-len': ['error', { code: 80, ignoreUrls: true }],
+    'sort-imports': 'error',
     '@typescript-eslint/indent': [2, 2],
     '@typescript-eslint/no-var-requires': 0,
   },
   globals: {
     document: false,
-  }
+  },
 };

@@ -60,6 +60,12 @@ module.exports = class extends Generator {
     // Copy all dotfiles in common
     this.fs.copy(this.templatePath('.*'), this.destinationRoot());
 
+    // Copy all VSCode settings
+    this.fs.copy(
+      this.templatePath('.vscode/*'),
+      this.destinationPath('.vscode')
+    );
+
     // Copy package.json
     this.fs.copyTpl(
       this.templatePath('package.json'),
