@@ -18,6 +18,7 @@ describe('generator-web-application:app', () => {
       '.eslintrc.js',
       '.gitignore',
       '.prettierrc',
+      '.vscode/settings.json',
       'babel.config.js',
       'jest.config.js',
       'package-lock.json',
