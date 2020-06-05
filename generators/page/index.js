@@ -17,17 +17,14 @@ module.exports = class extends Generator {
         default: false,
       },
     ];
-    return this.prompt(prompts).then(props => {
+    return this.prompt(prompts).then((props) => {
       // To access props later use this.props.someAnswer;
       this.props = props;
     });
   }
 
   writing() {
-    const name = this.options.name
-      .toLocaleLowerCase()
-      .split(' ')
-      .join('-');
+    const name = this.options.name.toLocaleLowerCase().split(' ').join('-');
 
     if (
       this.fs.exists(this.destinationPath('src', 'pages', name + '.js')) ||

@@ -41,7 +41,7 @@ module.exports = class extends Generator {
       },
     ];
 
-    return this.prompt(prompts).then(props => {
+    return this.prompt(prompts).then((props) => {
       // To access props later use this.props.someAnswer;
       this.props = props;
     });
@@ -49,10 +49,7 @@ module.exports = class extends Generator {
 
   writing() {
     // Make the name dash-separated
-    let name = this.props.name
-      .toLocaleLowerCase()
-      .split(' ')
-      .join('-');
+    let name = this.props.name.toLocaleLowerCase().split(' ').join('-');
 
     // Copy all non-dotfiles in common
     this.fs.copy(this.templatePath('**/*'), this.destinationRoot());
