@@ -19,9 +19,7 @@
       "chunks": {
         "byName": {},
         "bySource": {},
-        "usedIds": [
-          1
-        ]
+        "usedIds": [1]
       }
     }
   ],
@@ -44,9 +42,7 @@
       "chunks": {
         "byName": {},
         "bySource": {},
-        "usedIds": [
-          0
-        ]
+        "usedIds": [0]
       }
     }
   ],
@@ -67,9 +63,7 @@
           "mini-css-extract-plugin": 0
         },
         "bySource": {},
-        "usedIds": [
-          0
-        ]
+        "usedIds": [0]
       }
     }
   ],
@@ -84,7 +78,12 @@
       "node_modules/babel-loader/lib/index.js!src/index.js f99451c2ea11b314e5963211dcabdfae": 0,
       "node_modules/babel-loader/lib/index.js!src/pages/about.ts": 0,
       "node_modules/babel-loader/lib/index.js!src/index.ts a4a538853117fb9b8b8aecdb7d101326": 2,
-      "node_modules/babel-loader/lib/index.js!src/index.js 5677e5b424ff8e2cfd0f755278fe4cf7": 0
+      "node_modules/babel-loader/lib/index.js!src/index.js 5677e5b424ff8e2cfd0f755278fe4cf7": 0,
+      "node_modules/babel-loader/lib/index.js!src/index.ts 31a4082865dfde383f0f90b0023169c5": 2,
+      "node_modules/mini-css-extract-plugin/dist/loader.js!node_modules/css-loader/dist/cjs.js!node_modules/sass-loader/dist/cjs.js!node_modules/postcss-loader/src/index.js??ref--6-3!src/main.scss": 1,
+      "node_modules/babel-loader/lib/index.js!src/index.ts df3abf064195eea6f7146c5edad5ec37": 2,
+      "node_modules/babel-loader/lib/index.js!src/index.ts 2d6b121b668ba2b2eae9b7d19ccacf5f": 2,
+      "node_modules/babel-loader/lib/index.js!src/index.ts 0b54f6c16b558db69214241cb3fb6d15": 2
     },
     "usedIds": {
       "0": 0,
@@ -101,11 +100,7 @@
       "about": 0
     },
     "bySource": {},
-    "usedIds": [
-      0,
-      1,
-      2
-    ]
+    "usedIds": [0, 1, 2]
   },
   "html-webpack-plugin for \"page/index.html\"": [
     {
@@ -126,9 +121,7 @@
       "chunks": {
         "byName": {},
         "bySource": {},
-        "usedIds": [
-          0
-        ]
+        "usedIds": [0]
       }
     }
   ],
@@ -151,9 +144,7 @@
       "chunks": {
         "byName": {},
         "bySource": {},
-        "usedIds": [
-          0
-        ]
+        "usedIds": [0]
       }
     }
   ],
@@ -176,9 +167,7 @@
       "chunks": {
         "byName": {},
         "bySource": {},
-        "usedIds": [
-          0
-        ]
+        "usedIds": [0]
       }
     }
   ],
@@ -187,11 +176,24 @@
       "modules": {
         "byIdentifier": {
           "node_modules/css-loader/dist/cjs.js!node_modules/sass-loader/dist/cjs.js!node_modules/postcss-loader/src/index.js??ref--5-3!src/main.scss": 0,
-          "node_modules/css-loader/dist/runtime/api.js": 1
+          "node_modules/css-loader/dist/runtime/api.js": 1,
+          "node_modules/css-loader/dist/runtime/getUrl.js": 2,
+          "node_modules/url-loader/dist/cjs.js??ref--6!src/images/apple-watch-ui.png": 3,
+          "node_modules/url-loader/dist/cjs.js??ref--6!src/assets/images/apps/1.png": 3,
+          "node_modules/file-loader/dist/cjs.js??ref--7!src/assets/fonts/OpenSans-Regular.ttf": 4,
+          "node_modules/file-loader/dist/cjs.js??ref--7!src/assets/fonts/OpenSans-SemiBold.ttf": 5,
+          "node_modules/file-loader/dist/cjs.js??ref--7!src/assets/fonts/OpenSans-Italic.ttf": 6,
+          "node_modules/file-loader/dist/cjs.js??ref--7!src/assets/fonts/OpenSans-SemiBoldItalic.ttf": 7
         },
         "usedIds": {
           "0": 0,
-          "1": 1
+          "1": 1,
+          "2": 2,
+          "3": 3,
+          "4": 4,
+          "5": 5,
+          "6": 6,
+          "7": 7
         }
       },
       "chunks": {
@@ -199,9 +201,59 @@
           "mini-css-extract-plugin": 0
         },
         "bySource": {},
-        "usedIds": [
-          0
-        ]
+        "usedIds": [0]
+      }
+    }
+  ],
+  "HtmlWebpackCompiler": [
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/html-webpack-plugin/lib/loader.js!src/index.html": 0,
+          "node_modules/html-webpack-plugin/lib/loader.js!node_modules/html-webpack-plugin/default_index.ejs": 1,
+          "node_modules/html-webpack-plugin/lib/loader.js!node_modules/html-loader/dist/cjs.js!src/index.html": 0,
+          "node_modules/html-loader/dist/runtime/getUrl.js": 2,
+          "node_modules/url-loader/dist/cjs.js??ref--7!src/assets/images/apps/1.png": 3
+        },
+        "usedIds": {
+          "0": 0,
+          "1": 1,
+          "2": 2,
+          "3": 3
+        }
+      },
+      "chunks": {
+        "byName": {
+          "HtmlWebpackPlugin_0": 0,
+          "HtmlWebpackPlugin_1": 1
+        },
+        "bySource": {},
+        "usedIds": [0, 1]
+      }
+    }
+  ],
+  "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js!node_modules/sass-loader/dist/cjs.js!node_modules/postcss-loader/src/index.js??ref--6-3!src/main.scss": [
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/dist/cjs.js!node_modules/sass-loader/dist/cjs.js!node_modules/postcss-loader/src/index.js??ref--6-3!src/main.scss": 0,
+          "node_modules/css-loader/dist/runtime/api.js": 1,
+          "node_modules/css-loader/dist/runtime/getUrl.js": 2,
+          "node_modules/url-loader/dist/cjs.js??ref--7!src/assets/images/apps/1.png": 3
+        },
+        "usedIds": {
+          "0": 0,
+          "1": 1,
+          "2": 2,
+          "3": 3
+        }
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [0]
       }
     }
   ]

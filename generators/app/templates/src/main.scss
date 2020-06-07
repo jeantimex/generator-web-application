@@ -1,7 +1,46 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: normal;
+  src: url('assets/fonts/OpenSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('assets/fonts/OpenSans-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: normal;
+  src: url('assets/fonts/OpenSans-Italic.ttf');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 600;
+  src: url('assets/fonts/OpenSans-SemiBoldItalic.ttf');
+}
+
+html,
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
 body {
   background-color: white;
 
   div {
     color: black;
   }
+}
+
+.yeoman {
+  background-image: url('./assets/images/yeoman.png');
+  width: 576px;
+  height: 900px;
 }

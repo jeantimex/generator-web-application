@@ -136,6 +136,38 @@ exports.loadImages = ({ include, exclude, options } = {}) => ({
   },
 });
 
+exports.loadFonts = ({ include, exclude, options } = {}) => ({
+  module: {
+    rules: [
+      {
+        test: /\.(ttf|eot|woff|woff2)$/,
+        include,
+        exclude,
+        use: {
+          loader: 'file-loader',
+          options,
+        },
+      },
+    ],
+  },
+});
+
+exports.loadHtml = ({ include, exclude, options } = {}) => ({
+  module: {
+    rules: [
+      {
+        test: /\.html$/,
+        include,
+        exclude,
+        use: {
+          loader: 'html-loader',
+          options,
+        },
+      },
+    ],
+  },
+});
+
 exports.generateSourceMaps = ({ type }) => ({
   devtool: type,
 });

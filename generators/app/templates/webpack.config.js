@@ -18,6 +18,7 @@ const commonConfig = merge([
     resolve: {
       alias: {
         lib: path.resolve(__dirname, 'src/lib/'),
+        assets: path.resolve(__dirname, 'src/assets/'),
       },
       extensions: ['.js', '.ts'],
     },
@@ -56,12 +57,17 @@ const productionConfig = merge([
     use: ['css-loader', 'sass-loader', parts.autoprefix()],
   }),
   parts.purifyCSS({
-    paths: glob.sync(`${PATHS.app}/**/*.{js,ts}`, { nodir: true }),
+    paths: glob.sync(`${PATHS.app}/**/*.{html,js,ts}`, { nodir: true }),
   }),
   parts.loadImages({
     options: {
-      limit: 15000,
-      name: '[name].[hash:4].[ext]',
+      limit: 8192,
+      name: './images/[name].[hash:4].[ext]',
+    },
+  }),
+  parts.loadFonts({
+    options: {
+      name: './fonts/[name].[hash:4].[ext]',
     },
   }),
   {
@@ -79,11 +85,23 @@ const developmentConfig = merge([
     host: process.env.HOST,
     port: process.env.PORT,
   }),
+  parts.loadHtml(),
   parts.loadCSS(),
+  parts.loadImages({
+    options: {
+      limit: 8192,
+      name: './images/[name].[ext]',
+    },
+  }),
+  parts.loadFonts({
+    options: {
+      name: './fonts/[name].[ext]',
+    },
+  }),
   parts.generateSourceMaps({ type: 'source-map' }),
 ]);
 
-module.exports = mode => {
+module.exports = (mode) => {
   const pages = [];
 
   // Index page.
@@ -105,10 +123,10 @@ module.exports = mode => {
   // Other pages.
   const pagesDirectory = path.join(__dirname, 'src/pages');
   fs.readdirSync(pagesDirectory)
-    .filter(filename => filename.match(/\.(js|ts)$/))
-    .forEach(filename => {
+    .filter((filename) => filename.match(/\.(js|ts)$/))
+    .forEach((filename) => {
       const pageName = path.parse(filename).name;
-      const pageTitle = pageName.replace(/^\w/, c => c.toUpperCase());
+      const pageTitle = pageName.replace(/^\w/, (c) => c.toUpperCase());
       const pagePath = 'pages';
 
       // Create the page chunk.
